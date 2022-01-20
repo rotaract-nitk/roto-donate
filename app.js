@@ -7,7 +7,7 @@ const ExpressError = require('./utils/ExpressError');
 
 // import routes
 const teamRoutes = require('./routes/template');
-
+const orgIndexRouter = require('./routes/orgIndexRoutes')
 const app = express();
 
 mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net/rotoDonations?retryWrites=true&w=majority', {
@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net
 });
 
 app.use('/', teamRoutes);
+app.use('/index', orgIndexRouter);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -36,7 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('home.ejs');
 })
-
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
