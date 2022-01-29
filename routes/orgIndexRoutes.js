@@ -32,7 +32,7 @@ const orgIndex = [
 
 
 router.get('/', (req, res) => {
-    res.render('organizations/index.ejs', { orgIndex: orgIndex });
+    res.render('organizations/indexOrgs.ejs', { orgIndex: orgIndex });
 })
 
 module.exports = router
