@@ -7,7 +7,7 @@ const ExpressError = require('./utils/ExpressError');
 
 // import routes
 const teamRoutes = require('./routes/template');
-
+const orgIndexRouter = require('./routes/orgIndexRoutes')
 const app = express();
 
 mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net/rotoDonations?retryWrites=true&w=majority', {
@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net
 });
 
 app.use('/', teamRoutes);
+app.use('/index', orgIndexRouter);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -39,6 +40,9 @@ app.get('/', (req, res) => {
 app.get('/orgs', (req, res) => {
     res.render('organizations/index.ejs');
 })
+// app.get('/index', (req, res) => {
+//     res.render('organizations/indexOrgs.ejs');
+// })
 
 
 
