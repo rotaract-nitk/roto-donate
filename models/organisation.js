@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const { stringify } = require('nodemon/lib/utils');
 
-const imageSchema = new Schema({
+const imageSchema = new mongoose.Schema({
     url: String,
-    altText: String
+    alt: String
 });
 
 const organisationSchema = new mongoose.Schema({
@@ -19,7 +20,7 @@ const organisationSchema = new mongoose.Schema({
         required : [true,'Organisation needs description to show in it\'s page']
     },
     thumbnail : {
-        type : imageSchema,
+        type : String,
         required : [true,'Organisaton card must have a thumbnail']
     },
     images : [imageSchema]

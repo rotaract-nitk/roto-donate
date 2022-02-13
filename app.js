@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
+const Organisations = require('./seeds/organisations');
 
 const orgIndex = [
     {
@@ -34,7 +35,8 @@ const orgIndex = [
 
 
 // import routes
-const teamRoutes = require('./routes/template');
+// const teamRoutes = require('./routes/template');
+const organisationRoutes = require('./routes/organisation');
 const app = express();
 
 mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net/rotoDonations?retryWrites=true&w=majority', {
@@ -42,7 +44,9 @@ mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net
     useUnifiedTopology: true
 });
 
-app.use('/', teamRoutes);
+app.use('/', organisationRoutes);
+
+
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -64,7 +68,7 @@ app.get('/', (req, res) => {
     res.render('home.ejs',{orgIndex});
 })
 app.get('/orgs', (req, res) => {
-    res.render('organizations/index.ejs');
+    res.render('organizations/index.ejs',{Organisations});
 })
 // app.get('/index', (req, res) => {
 //     res.render('organizations/indexOrgs.ejs');

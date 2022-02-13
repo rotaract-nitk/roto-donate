@@ -2,13 +2,13 @@
 
             <section class="dark">
                 <div class="container py-4"></div>
-                <% orgIndex.forEach(function(organisation,index) { %> <% if
+                <% organisations.forEach(function(organisation,index) { %> <% if
                 (index%2===0) { %>
                 <article class="postcard dark roto">
                     <a class="postcard__img_link" href="">
                         <img
                             class="postcard__img"
-                            src="<%= organisation.imgUrl %>"
+                            src="<%= organisation.thumbnail %>"
                             alt="Image Title"
                         />
                     </a>
@@ -23,7 +23,7 @@
                         </div>
                         <ul class="postcard__btnbox">
                             <li class="btn__item play roto">
-                                <a href="/orgs"
+                                <a href="/<%= organisation._id %>"
                                     ><i class="fas fa-info-circle mr-2"></i>Know
                                     more</a
                                 >
@@ -42,7 +42,7 @@
                     <a class="postcard__img_link" href="#">
                         <img
                             class="postcard__img"
-                            src="<%= organisation.imgUrl %>"
+                            src="<%= organisation.thumbnail %>"
                             alt="Image Title"
                         />
                     </a>
@@ -57,7 +57,7 @@
                         </div>
                         <ul class="postcard__btnbox">
                             <li class="btn__item play roto">
-                                <a href="#"
+                                <a href="/<%= organisation._id %>"
                                     ><i class="fas fa-info-circle mr-2"></i>Know
                                     more</a
                                 >
