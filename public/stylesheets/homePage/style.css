@@ -4281,7 +4281,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-link.disabled {
-    color: #6c757d;
+    color: #05e005;
     pointer-events: none;
     cursor: default
 }
@@ -4301,19 +4301,19 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    border-color: #e9ecef #e9ecef #dee2e6
+    border-color: #1cbb07 #1ada01 #09db1b
 }
 
 .nav-tabs .nav-link.disabled {
-    color: #6c757d;
+    color: #0ae742;
     background-color: transparent;
     border-color: transparent
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #495057;
-    background-color: #fff;
-    border-color: #dee2e6 #dee2e6 #fff
+    color: #0fe91a;
+    background-color: rgb(43, 231, 26);
+    border-color: #02df02 #04df04 rgb(38, 204, 5)
 }
 
 .nav-tabs .dropdown-menu {
@@ -4327,8 +4327,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #007bff
+    color: rgb(10, 221, 38);
+    background-color: #17dd10
 }
 
 .nav-fill .nav-item {
@@ -4727,19 +4727,19 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, .5)
+    color: rgba(18, 207, 11, 0.5)
 }
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: rgba(0, 0, 0, .7)
+    color: rgba(43, 214, 9, 0.7)
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
-    color: rgba(0, 0, 0, .3)
+    color: rgba(12, 207, 5, 0.3)
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: rgba(0, 0, 0, .9)
+    color: rgba(1, 216, 12, 0.9)
 }
 
 .navbar-light .navbar-toggler {
@@ -10879,6 +10879,7 @@ a:focus, a:hover {
 
 .ftco-navbar-light .navbar-nav>.nav-item.cta>a {
     color: #fff;
+    position: fixed;
     border: 1px solid #3e64ff;
     padding-top: .7rem;
     padding-bottom: .7rem;
@@ -10910,7 +10911,7 @@ a:focus, a:hover {
 .ftco-navbar-light .navbar-nav>.nav-item .nav-link.active {
     background: 0 0;
     background: 0 0;
-    color: #3e64ff
+    color: var(--green)
 }
 
 .ftco-navbar-light .navbar-nav>.nav-item .nav-link.active span:before {
@@ -11510,7 +11511,7 @@ a:focus, a:hover {
     font-weight: 800;
     font-size: 30px;
     margin-bottom: 30px;
-    color: #3e64ff
+    color: var(--green)
 }
 
 .resume-wrap {
