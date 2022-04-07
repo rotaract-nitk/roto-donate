@@ -11045,7 +11045,7 @@ a:focus, a:hover {
     z-index: 0
 }
 
-.navbar-brand:after {
+/* .navbar-brand:after {
     position: absolute;
     top: 50%;
     left: -12px;
@@ -11061,7 +11061,7 @@ a:focus, a:hover {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%
-}
+} */
 
 .navbar-brand span {
     color: blue
@@ -13094,7 +13094,7 @@ a, a:hover {
     }
 }
 
-.fixed-top{
+.fixed-top {
     position: fixed;
     top: 0;
     right: 0;

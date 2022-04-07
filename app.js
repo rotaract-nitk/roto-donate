@@ -65,10 +65,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-    res.render('home.ejs',{orgIndex});
+    res.render('home.ejs', { orgIndex });
 })
 app.get('/orgs', (req, res) => {
-    res.render('organizations/index.ejs',{Organisations});
+    res.render('organizations/index.ejs', { Organisations });
 })
 // app.get('/index', (req, res) => {
 //     res.render('organizations/indexOrgs.ejs');

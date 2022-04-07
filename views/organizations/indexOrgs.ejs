@@ -1,75 +1,63 @@
-
-
-            <section class="dark">
-                <div class="container py-4"></div>
-                <% organisations.forEach(function(organisation,index) { %> <% if
-                (index%2===0) { %>
-                <article class="postcard dark roto">
-                    <a class="postcard__img_link" href="">
-                        <img
-                            class="postcard__img"
-                            src="<%= organisation.thumbnail %>"
-                            alt="Image Title"
-                        />
-                    </a>
-                    <div class="postcard__text">
-                        <h1 class="postcard__title roto">
-                            <a href="#"> <%= organisation.title %> </a>
-                        </h1>
-                        <div class="postcard__subtitle small"></div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <%= organisation.description%>
-                        </div>
-                        <ul class="postcard__btnbox">
-                            <li class="btn__item play roto">
-                                <a href="/<%= organisation._id %>"
-                                    ><i class="fas fa-info-circle mr-2"></i>Know
-                                    more</a
-                                >
-                            </li>
-                            <li class="btn__item play roto">
-                                <a href="#"
-                                    ><i class="fas fa-donate mr-2"></i>Donate
-                                    now</a
-                                >
-                            </li>
-                        </ul>
+<section class="dark">
+    <div class="container py-4"></div>
+    <% organisations.forEach(function(organisation,index) { %>
+        <% if (index%2===0) { %>
+            <article class="postcard dark roto">
+                <a class="postcard__img_link" href="">
+                    <img class="postcard__img" src="<%= organisation.thumbnail %>" alt="Image Title" />
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title roto">
+                        <a href="#">
+                            <%= organisation.title %>
+                        </a>
+                    </h1>
+                    <div class="postcard__subtitle small"></div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">
+                        <%= organisation.description%>
                     </div>
-                </article>
-                <% } %> <% if (index%2!==0) { %>
-                <article class="postcard dark roto">
-                    <a class="postcard__img_link" href="#">
-                        <img
-                            class="postcard__img"
-                            src="<%= organisation.thumbnail %>"
-                            alt="Image Title"
-                        />
-                    </a>
-                    <div class="postcard__text">
-                        <h1 class="postcard__title roto">
-                            <a href="#"> <%= organisation.title %> </a>
-                        </h1>
-                        <div class="postcard__subtitle small"></div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <%= organisation.description%>
+                    <ul class="postcard__btnbox">
+                        <li class="btn__item play roto">
+                            <a href="/<%= organisation._id %>"><i class="fas fa-info-circle mr-2"></i>Know
+                                more</a>
+                        </li>
+                        <li class="btn__item play roto">
+                            <a href="#"><i class="fas fa-donate mr-2"></i>Donate
+                                now</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <% } %>
+                <% if (index%2!==0) { %>
+                    <article class="postcard dark roto">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img" src="<%= organisation.thumbnail %>" alt="Image Title" />
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title roto">
+                                <a href="#">
+                                    <%= organisation.title %>
+                                </a>
+                            </h1>
+                            <div class="postcard__subtitle small"></div>
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                                <%= organisation.description%>
+                            </div>
+                            <ul class="postcard__btnbox">
+                                <li class="btn__item play roto">
+                                    <a href="/<%= organisation._id %>"><i class="fas fa-info-circle mr-2"></i>Know
+                                        more</a>
+                                </li>
+                                <li class="btn__item play roto">
+                                    <a href="#"><i class="fas fa-donate mr-2"></i>Donate
+                                        now</a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="postcard__btnbox">
-                            <li class="btn__item play roto">
-                                <a href="/<%= organisation._id %>"
-                                    ><i class="fas fa-info-circle mr-2"></i>Know
-                                    more</a
-                                >
-                            </li>
-                            <li class="btn__item play roto">
-                                <a href="#"
-                                    ><i class="fas fa-donate mr-2"></i>Donate
-                                    now</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <% } %> <% }) %>
-            </section>
+                    </article>
+                    <% } %>
+                        <% }) %>
+</section>
