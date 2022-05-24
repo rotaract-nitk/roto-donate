@@ -28,7 +28,15 @@ module.exports = [
                 alt: "alt",
             },
             {
+                url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+                alt: "alt",
+            },
+            {
                 url: "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                alt: "alt",
+            },
+            {
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg",
                 alt: "alt",
             }
         ]
@@ -41,7 +49,15 @@ module.exports = [
         thumbnail: "https://www.unitedwaymumbai.org/ngo_logos/142_logo.jpg",
         images: [
             {
+                url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+                alt: "alt",
+            },
+            {
                 url: 'https://www.unitedwaymumbai.org/ngo_logos/142_logo.jpg'
+            },
+            {
+                url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+                alt: "alt",
             }
         ]
     },
@@ -53,7 +69,11 @@ module.exports = [
         thumbnail: "https://globalprimenews.com/wp-content/uploads/2020/05/IMG_20200511_184505.png",
         images: [
             {
-                Url: 'https://globalprimenews.com/wp-content/uploads/2020/05/IMG_20200511_184505.png'
+                url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+                alt: "alt",
+            },
+            {
+                url: 'https://globalprimenews.com/wp-content/uploads/2020/05/IMG_20200511_184505.png'
             }
         ]
     },
@@ -67,6 +87,10 @@ module.exports = [
             {
 
                 url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Child_Rights_and_You_%28CRY%29_Organization_logo.png/250px-Child_Rights_and_You_%28CRY%29_Organization_logo.png'
+            },
+            {
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg",
+                alt: "alt",
             }
         ]
     },
@@ -79,7 +103,11 @@ module.exports = [
 
         images: [
             {
-                url: 'https://www.pratham.org/wp-content/uploads/2020/03/Capture.png'
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg'
+            },
+            {
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg",
+                alt: "alt",
             }
         ]
 
