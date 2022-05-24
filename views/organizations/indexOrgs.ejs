@@ -23,7 +23,8 @@
                                 more</a>
                         </li>
                         <li class="btn__item play roto">
-                            <a href="#"><i class="fas fa-donate mr-2"></i>Donate
+                            <a href="#" data-bs-toggle="modal" data-bs-target=<%="#exampleModalCenter" + index%>><i
+                                    class="fas fa-donate mr-2"></i>Donate
                                 now</a>
                         </li>
                     </ul>
@@ -52,12 +53,15 @@
                                         more</a>
                                 </li>
                                 <li class="btn__item play roto">
-                                    <a href="#"><i class="fas fa-donate mr-2"></i>Donate
+                                    <a href="#" data-bs-toggle="modal" data-bs-target=<%="#exampleModalCenter" +
+                                        index%>><i class="fas fa-donate mr-2"></i>Donate
                                         now</a>
                                 </li>
                             </ul>
                         </div>
                     </article>
                     <% } %>
-                        <% }) %>
+                        <%- include("./../donateModal.ejs",{organisation : organisation,index:index}) %>
+                            <% }) %>
+
 </section>

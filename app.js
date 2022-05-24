@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const Organisations = require('./seeds/organisations');
+var bodyParser = require('body-parser');
 
 const orgIndex = [
     {
@@ -38,6 +39,12 @@ const orgIndex = [
 // const teamRoutes = require('./routes/template');
 const organisationRoutes = require('./routes/organisation');
 const app = express();
+
+// for parsing application/json
+app.use(bodyParser.json());
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net/rotoDonations?retryWrites=true&w=majority', {
     useNewUrlParser: true,

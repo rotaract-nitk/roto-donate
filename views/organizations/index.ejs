@@ -144,15 +144,16 @@
                   <br>
                   <div class="lead mb-4">300 donations<p class="lead mb-4" style="float: right;">4000 to go</p>
                   </div>
-
                   <p class="mb-0">
-                    <a href="#" target="_blank" class="btn btn-primary btn-circled mx-auto d-block"
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter_"
+                      class="btn btn-primary btn-circled mx-auto d-block"
                       style="background: #21c87a!important; border-color: #21c87a!important;color: #fff; font-size: .6875rem; font-weight: 700;     position: relative; text-transform: uppercase; padding: 1.2rem 2.7rem;     border: 0.1rem solid transparent;     transition: all 0.2s ease-in-out; letter-spacing: .5px;     border-radius: 75px;">
                       Donate Now
                     </a>
                   </p>
                   <br>
                   <br>
+                  <%- include("./../donateModal.ejs",{index:'_'}) %>
 
             </section>
 
@@ -164,7 +165,7 @@
         <div>
           <br>
 
-          
+
 
           <h1 class="display-6 mb-4 font-weight-normal">
             Gallery
@@ -172,20 +173,21 @@
 
           <div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
 
-          
+
 
             <!-- Indicators/dots -->
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
               <% for( let i=1; i < organisation.images.length; i++ ) { %>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="<%= i %>"></button>
-              <% } %>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="<%= i %>"></button>
+                <% } %>
             </div>
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="mx-auto d-block" src="<%= organisation.images[0].url %>" style="width: 1200px; height: 700px; border-radius: 10px;">
+                <img class="mx-auto d-block" src="<%= organisation.images[0].url %>"
+                  style="width: 1200px; height: 700px; border-radius: 10px;">
               </div>
               <% for( let i=1; i < organisation.images.length; i++ ) { %>
 
