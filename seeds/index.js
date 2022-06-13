@@ -33,7 +33,9 @@ const seedDB = async () => {
             mission: organisations[i].mission,
             description: organisations[i].description,
             thumbnail: organisations[i].thumbnail,
-            images: organisations[i].images
+            images: organisations[i].images,
+            donationsCount:0
+
         })
         await organisation.save();
     }
