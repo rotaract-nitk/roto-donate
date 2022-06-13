@@ -23,6 +23,10 @@ const organisationSchema = new mongoose.Schema({
         type : String,
         required : [true,'Organisaton card must have a thumbnail']
     },
+    donationsCount : {
+        type: Number,
+        default:0
+    },
     images : [imageSchema]
 })
 
