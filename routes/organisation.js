@@ -3,6 +3,7 @@ const template = require('../models/organisation');
 const router = express.Router();
 const organisationSchema = require('../models/organisation');
 const organisations = require('../controllers/organisation');
+const donationController = require('./../controllers/donationController')
 const catchAsync = require('../utils/catchAsync');
 
 // this route is for
@@ -12,8 +13,6 @@ router.route('/')
     .get(catchAsync(organisations.index))
 // .post() complete this post request
 
-router.route('/')
-    .post(organisations.handleDonation)
 
 // this route is to add new member i.e through form --- complete this route
 // router.get('/new', isLoggedIn, teams.renderNewForm) 
@@ -29,6 +28,10 @@ router.route('/:id')
 // .put()
 // .delete
 
+router.route('/:id/paynow')
+    .post(donationController.handleDonation)
+
+router.route('/:id/paymentResult').post(donationController.donationResponse)
 
 // to update a team member - get req
 

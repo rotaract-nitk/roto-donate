@@ -17,7 +17,3 @@ module.exports.showOrganisation = async (req, res) => {
     res.render('organizations/index', { organisation });
 }
 
-module.exports.handleDonation = async (req, res, next) => {
-    console.log(req.body);
-    res.redirect(req.get('referer'))
-}

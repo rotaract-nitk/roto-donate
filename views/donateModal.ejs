@@ -1,4 +1,4 @@
-<div class="modal fade" id=<%="exampleModalCenter" + index %> tabindex="-1" role="dialog"
+<div class="modal fade" id=<%="exampleModalCenter" + organisation.id %> tabindex="-1" role="dialog"
     aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -11,9 +11,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="http://localhost:3000/" method="post">
+                <form action=<%="http://localhost:3000/" + organisation.id + "/paynow" %> method="post">
                     <div class="form-group">
-                        <label for="Name">Full Name</label>
+                        <label for="name">Full Name</label>
                         <input type="text" required name="name" class="form-control" id="Name" aria-describedby="name">
                     </div>
                     <div class="form-group">
@@ -22,9 +22,18 @@
                             required>
                     </div>
                     <div class="form-group">
+                        <label for="phone">Mobile No.</label>
+                        <input type="tel" name="phone" class="form-control" id="phone" aria-describedby="phone"
+                            required>
+                    </div>
+                    <div class="form-group">
                         <label for="amount">Amount(₹)</label>
                         <input type="number" name="amount" class="form-control" id="amount" aria-describedby="amount"
                             required>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="id" class="form-control" id="id" aria-describedby="id"
+                            value=<%=organisation.id %> >
                     </div>
             </div>
             <div class="modal-footer">

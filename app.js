@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
@@ -34,7 +35,7 @@ const orgIndex = [
     }
 ]
 
-
+dotenv.config({ path: './config.env' })
 // import routes
 // const teamRoutes = require('./routes/template');
 const organisationRoutes = require('./routes/organisation');

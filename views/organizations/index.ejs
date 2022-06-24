@@ -145,15 +145,18 @@
                   <div class="lead mb-4">300 donations<p class="lead mb-4" style="float: right;">4000 to go</p>
                   </div>
                   <p class="mb-0">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter_"
+                    <a href="#" data-bs-toggle="modal" data-bs-target=<%="#exampleModalCenter" + organisation.id%>
                       class="btn btn-primary btn-circled mx-auto d-block"
-                      style="background: #21c87a!important; border-color: #21c87a!important;color: #fff; font-size: .6875rem; font-weight: 700;     position: relative; text-transform: uppercase; padding: 1.2rem 2.7rem;     border: 0.1rem solid transparent;     transition: all 0.2s ease-in-out; letter-spacing: .5px;     border-radius: 75px;">
+                      style="background: #21c87a!important; border-color: #21c87a!important;color: #fff; font-size:
+                      .6875rem; font-weight: 700; position: relative; text-transform: uppercase; padding: 1.2rem 2.7rem;
+                      border: 0.1rem solid transparent; transition: all 0.2s ease-in-out; letter-spacing: .5px;
+                      border-radius: 75px;">
                       Donate Now
                     </a>
                   </p>
                   <br>
                   <br>
-                  <%- include("./../donateModal.ejs",{index:'_'}) %>
+                  <%- include("./../donateModal.ejs") %>
 
             </section>
 
