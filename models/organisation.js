@@ -27,7 +27,10 @@ const organisationSchema = new mongoose.Schema({
         type: Number,
         default:0
     },
-    images : [imageSchema]
+    images : [imageSchema],
+    donors:[
+        {type: Schema.Types.ObjectId, ref: 'donor'}
+      ]
 })
 
 module.exports = mongoose.model('Organisation',organisationSchema);
