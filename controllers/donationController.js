@@ -1,6 +1,7 @@
 const https = require('https');
 const checksum_lib = require('paytmCheckSum');
 const catchAsync = require('./../utils/catchAsync')
+const Organisation = require('./../models/organisation');
 
 module.exports.handleDonation = catchAsync(async (req, res, next) => {
     if (!req.body.amount || !req.body.email || !req.body.phone) {
@@ -15,8 +16,6 @@ module.exports.handleDonation = catchAsync(async (req, res, next) => {
         params["CUST_ID"] = "customer_001";
         params["TXN_AMOUNT"] = req.body.amount.toString();
         params["CALLBACK_URL"] = `http://localhost:3000/${req.body.id}/paymentResult`;
-        params["EMAIL"] = req.body.email;
-        params["MOBILE_NO"] = req.body.phone.toString();
 
         const checksum = await checksum_lib.generateSignature(params, process.env.PAYTM_KEY)
         var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
@@ -39,12 +38,19 @@ module.exports.handleDonation = catchAsync(async (req, res, next) => {
             '</form><script type="text/javascript">document.f1.submit();</script></body></html>'
         );
         res.end();
+
     }
 })
 
-module.exports.donationResponse = (req, res) => {
+module.exports.donationResponse = async (req, res) => {
+    console.log(req);
     if (req.body.STATUS == "TXN_SUCCESS") {
-        res.status(200).send("payment sucess");
+        {
+            const currOrgnaisation = await Organisation.findById(req.params.id);
+            currOrgnaisation.donationsCount++;
+            currOrgnaisation.save();
+            res.status(200).send("payment sucess");
+        }
     } else {
         res.status(500).send("payment failed");
     }

@@ -7,30 +7,30 @@ const imageSchema = new mongoose.Schema({
 });
 
 const organisationSchema = new mongoose.Schema({
-    title : {
-        type : String,
-        required : [true,'Organisation must have a title']
+    title: {
+        type: String,
+        required: [true, 'Organisation must have a title']
     },
-    mission : {
-        type : String,
-        required : [true,'Organisation card needs mission to show']
+    mission: {
+        type: String,
+        required: [true, 'Organisation card needs mission to show']
     },
-    description : {
-        type : String,
-        required : [true,'Organisation needs description to show in it\'s page']
+    description: {
+        type: String,
+        required: [true, 'Organisation needs description to show in it\'s page']
     },
-    thumbnail : {
-        type : String,
-        required : [true,'Organisaton card must have a thumbnail']
+    thumbnail: {
+        type: String,
+        required: [true, 'Organisaton card must have a thumbnail']
     },
-    donationsCount : {
+    donationsCount: {
         type: Number,
-        default:0
+        default: 0
     },
-    images : [imageSchema],
-    donors:[
-        {type: Schema.Types.ObjectId, ref: 'donor'}
-      ]
+    images: [imageSchema],
+    donors: [
+        { type: mongoose.Schema.Types.ObjectId, ref: 'donor' }
+    ]
 })
 
-module.exports = mongoose.model('Organisation',organisationSchema);
+module.exports = mongoose.model('Organisation', organisationSchema);
