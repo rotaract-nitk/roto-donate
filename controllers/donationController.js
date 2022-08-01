@@ -1,5 +1,5 @@
 const https = require('https');
-const checksum_lib = require('./paytmCheckSum');
+const checksum_lib = require('./paytmChecksum');
 const catchAsync = require('./../utils/catchAsync')
 const Organisation = require('./../models/organisation');
 
