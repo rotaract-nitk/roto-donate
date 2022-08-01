@@ -1,22 +1,60 @@
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
+const Organisations = require('./seeds/organisations');
+var bodyParser = require('body-parser');
 
+const orgIndex = [
+    {
+        title: 'Nanhi Kali',
+        description: 'Nanhi Kali is an Indian non-governmental organization that supports education for underprivileged girls in India. Founded by Anand Mahindra in 1996.',
+        imgUrl: 'https://www.rotary-ribi.org/upimages/PageMainPics/Nanhi%20Kali%20Image.jpg'
+    },
+    {
+        title: 'The Smile Foundation',
+        description: 'The purpose of the Smile Foundation for Education in India was to promote education among the underprivileged. Their development program includes Education, health and livelihood.',
+        imgUrl: 'https://www.unitedwaymumbai.org/ngo_logos/142_logo.jpg'
+    },
+    {
+        title: 'Helpage India',
+        description: 'HelpAge India is an Indian organisation focused on the concerns of elders. Established in 1978, its mission is to “work for the cause and care of under-aged elderly people and improve their standard of living”.',
+        imgUrl: 'https://globalprimenews.com/wp-content/uploads/2020/05/IMG_20200511_184505.png'
+    },
+    {
+        title: 'CRY (Child Rights and You)',
+        description: 'Recognized as India’s most trusted  NGO, Child Rights and You (CRY) works tirelessly to ensure happier and healthier childhoods for India’s underprivileged childrem.',
+        imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Child_Rights_and_You_%28CRY%29_Organization_logo.png/250px-Child_Rights_and_You_%28CRY%29_Organization_logo.png'
+    },
+    {
+        title: 'Pratham',
+        description: 'Pratham is one of the largest non-governmental organisations in India. Madhav Chavan and Farida Lambe founded it. It works towards the provision of quality education for underprivileged children in India.Established in Mumbai in 1994 to provide pre-school education to children in slums.',
+        imgUrl: 'https://www.pratham.org/wp-content/uploads/2020/03/Capture.png'
+    }
+]
 
+dotenv.config({ path: './config.env' })
 // import routes
-const teamRoutes = require('./routes/template');
-const orgIndexRouter = require('./routes/orgIndexRoutes')
+// const teamRoutes = require('./routes/template');
+const organisationRoutes = require('./routes/organisation');
 const app = express();
+
+// for parsing application/json
+app.use(bodyParser.json());
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb+srv://rotoWebnitk:rotoWeb18@cluster0.hzgk8.mongodb.net/rotoDonations?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
-app.use('/', teamRoutes);
-app.use('/index', orgIndexRouter);
+app.use('/', organisationRoutes);
+
+
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -35,10 +73,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('home.ejs', { orgIndex });
 })
 app.get('/orgs', (req, res) => {
-    res.render('organizations/index.ejs');
+    res.render('organizations/index.ejs', { Organisations });
 })
 // app.get('/index', (req, res) => {
 //     res.render('organizations/indexOrgs.ejs');

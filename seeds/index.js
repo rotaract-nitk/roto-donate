@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+const organisations = require('./organisations');
+
 // db schema - table in Db
-const teamSchema = require('../models/template');
+const organisationSchema = require('../models/organisation');
 
 // List of members 
 // const members = require('./coreTeam');
@@ -23,19 +25,20 @@ db.once("open", () => {
 const seedDB = async () => {
 
     // your db seeding logic here
+    // console.log(organisations);
+     await organisationSchema.deleteMany({});
+    for (let i = 0; i < organisations.length; i++) {
+        const organisation = new organisationSchema({
+            title: organisations[i].title,
+            mission: organisations[i].mission,
+            description: organisations[i].description,
+            thumbnail: organisations[i].thumbnail,
+            images: organisations[i].images,
+            donationsCount:0
 
-    // await teamSchema.deleteMany({});
-    // for (let i = 0; i < 16; i++) {
-    //     const teamMember = new teamSchema({
-    //         name: members[i].name,
-    //         role: members[i].role,
-    //         imageURL: members[i].imageURL,
-    //         gmail: members[i].gmail,
-    //         insta: members[i].insta,
-    //         linkedIn: members[i].linkedIn
-    //     })
-    //     await teamMember.save();
-    // }
+        })
+        await organisation.save();
+    }
 }
 
 seedDB().then(() => {
