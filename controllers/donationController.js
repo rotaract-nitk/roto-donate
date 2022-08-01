@@ -15,7 +15,7 @@ module.exports.handleDonation = catchAsync(async (req, res, next) => {
         params["ORDER_ID"] = "TEST_" + new Date().getTime();
         params["CUST_ID"] = "customer_001";
         params["TXN_AMOUNT"] = req.body.amount.toString();
-        params["CALLBACK_URL"] = `http://localhost:3000/${req.body.id}/paymentResult`;
+        params["CALLBACK_URL"] = `https://roto-website.vercel.app/${req.body.id}/paymentResult`;
 
         const checksum = await checksum_lib.generateSignature(params, process.env.PAYTM_KEY)
         var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
