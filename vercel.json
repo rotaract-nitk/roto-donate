@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "roto-web",
+    "name": "roto-donate",
     "builds": [
        { "src": "app.js", "use": "@vercel/node" }
     ],
