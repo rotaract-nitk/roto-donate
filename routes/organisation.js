@@ -31,7 +31,8 @@ router.route('/:id')
 router.route('/:id/paynow')
     .post(donationController.handleDonation)
 
-router.route('/:id/paymentResult').post(donationController.donationResponse)
+router.route('/:id/paymentResult')
+    .post(donationController.donationResponse)
 
 // to update a team member - get req
 

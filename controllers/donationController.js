@@ -16,6 +16,7 @@ module.exports.handleDonation = catchAsync(async (req, res, next) => {
         params["CUST_ID"] = "customer_001";
         params["TXN_AMOUNT"] = req.body.amount.toString();
         params["CALLBACK_URL"] = `https://roto-donate.vercel.app/${req.body.id}/paymentResult`;
+        // params["CALLBACK_URL"] = `/${req.body.id}/paymentResult`;
 
         const checksum = await checksum_lib.generateSignature(params, process.env.PAYTM_KEY)
         var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
@@ -46,10 +47,12 @@ module.exports.donationResponse = async (req, res) => {
     console.log(req);
     if (req.body.STATUS == "TXN_SUCCESS") {
         {
+            // req.body.amount || !req.body.email || !req.body.phone
+            console.log(req.body.amount, req.body.email, req.body.phone);
             const currOrgnaisation = await Organisation.findById(req.params.id);
             currOrgnaisation.donationsCount++;
             currOrgnaisation.save();
-            res.status(200).send("payment sucess");
+            res.status(200).send(req.body.amount);
         }
     } else {
         res.status(500).send("payment failed");
