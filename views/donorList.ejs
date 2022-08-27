@@ -23,16 +23,19 @@
                         <th scope="col">Amount(₹)</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>Venkat Kumar</td>
-                    <td>The Smile Foundation</td>
-                    <td>21000</td>
-                </tr>
-                <tr>
-                    <td>Shalini Chandrashekhar</td>
-                    <td>Helpage India</td>
-                    <td>11000</td>
-                </tr>
+                <% donors_top.forEach((donor)=>{ %>
+                    <tr>
+                        <td>
+                            <%= donor.name %>
+                        </td>
+                        <td>
+                            <%= donor.org %>
+                        </td>
+                        <td>
+                            <%= donor.amount %>
+                        </td>
+                    </tr>
+                    <% }) %>
             </table>
             <table class="table recent-donation-info visually-hidden">
                 <thead>
@@ -42,16 +45,19 @@
                         <th scope="col">Amount(₹)</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>Aditya Agrawal</td>
-                    <td>Pratham</td>
-                    <td>5100</td>
-                </tr>
-                <tr>
-                    <td>Deepan KS</td>
-                    <td>Nanhi Kali</td>
-                    <td>10000</td>
-                </tr>
+                <% donors_recent.forEach((donor)=>{ %>
+                    <tr>
+                        <td>
+                            <%= donor.name %>
+                        </td>
+                        <td>
+                            <%= donor.org %>
+                        </td>
+                        <td>
+                            <%= donor.amount %>
+                        </td>
+                    </tr>
+                    <% }) %>
             </table>
         </div>
     </div>
