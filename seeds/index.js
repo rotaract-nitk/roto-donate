@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const organisations = require('./organisations');
-
 // db schema - table in Db
 const organisationSchema = require('../models/organisation');
-
+const Donor = require('./../models/donorSchema');
 // List of members 
 // const members = require('./coreTeam');
 
@@ -25,8 +25,15 @@ db.once("open", () => {
 const seedDB = async () => {
 
     // your db seeding logic here
+
+    const donors = fs.readFileSync(`${__dirname}/donors.json`, {
+        encoding: 'utf-8'
+    });
+    const donorObj = JSON.parse(donors);
+    await Donor.deleteMany({});
+    await Donor.insertMany(donorObj);
     // console.log(organisations);
-     await organisationSchema.deleteMany({});
+    await organisationSchema.deleteMany({});
     for (let i = 0; i < organisations.length; i++) {
         const organisation = new organisationSchema({
             title: organisations[i].title,
@@ -34,7 +41,7 @@ const seedDB = async () => {
             description: organisations[i].description,
             thumbnail: organisations[i].thumbnail,
             images: organisations[i].images,
-            donationsCount:0
+            donationsCount: 0
 
         })
         await organisation.save();

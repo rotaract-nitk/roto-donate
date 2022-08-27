@@ -127,7 +127,12 @@
                                 <h1 class="big">About</h1>
                                 <h2 class="mb-4">About Us</h2>
                                 <p>
-                                    RotoDonate is a Pursuit of Rotaract Chapter of NITK, organised in the hopes of bringing about a lasting change in the lives of people. We are merely students of an Engineering College who believe that a good impact can be brought about by individuals willing to take a conscious step to help the society. Through RotoDonate you can donate to any of the NGOs of your choice and can see the donation doing wonders. Your little help can bring about a multitude of changes.                                 </p>
+                                    RotoDonate is a Pursuit of Rotaract Chapter of NITK, organised in the hopes of
+                                    bringing about a lasting change in the lives of people. We are merely students of an
+                                    Engineering College who believe that a good impact can be brought about by
+                                    individuals willing to take a conscious step to help the society. Through RotoDonate
+                                    you can donate to any of the NGOs of your choice and can see the donation doing
+                                    wonders. Your little help can bring about a multitude of changes. </p>
                                 <ul class="about-info mt-4 px-md-0 px-2">
                                     <li class="d-flex"><span>Club:</span> <span>Rotoract NITK chapter</span></li>
                                     <li class="d-flex"><span>year:</span> <span>2021</span></li>
@@ -141,7 +146,7 @@
         </section>
 
 
-<!--
+        <!--
     <section class="ftco-section ftco-no-pb goto-here" id="content-section">
         <!-- <div class="container">
             <div class="row">
@@ -170,7 +175,7 @@
                                 <li><a href="#page-4">Support</a></li>
                             </ul>
                         </nav>
-                    </div> 
+                    </div>
 
 
                     <div class="col-md-9">
@@ -179,20 +184,27 @@
                             <%- include('organizations/indexOrgs',organisations) %>
 
                         </div>
-
-                        <%- include('donorList') %>
-
-
-
-                            <div id="page-2" class="page two">
-                                <h2 class="heading">Mission</h2>
-                                <p>
-                                    Our goal is to support people in our community in leading honourable, healthy lives on all fronts. All of the organisations that you donate to through us are striving to achieve this. People who are in good health are a benefit to society, and we want everyone to feel respected and treated with dignity for contributing to it. If those few of us who have the ability to provide a helping hand come forward, we can certainly make a difference. We strongly believe that we can make things a little easier for people since life is unfair and treats some of its own kids in unreasonable ways.                                 
-                                </p>
-                            </div>
+                        <% if (donors_top.length>0 || donors_recent.length>0) { %>
+                            <%- include('donorList') %>
+                                <% } %>
 
 
-                            <!-- <div id="page-3" class="page three">
+                                    <div id="page-2" class="page two">
+                                        <h2 class="heading">Mission</h2>
+                                        <p>
+                                            Our goal is to support people in our community in leading honourable,
+                                            healthy lives on all fronts. All of the organisations that you donate to
+                                            through us are striving to achieve this. People who are in good health are a
+                                            benefit to society, and we want everyone to feel respected and treated with
+                                            dignity for contributing to it. If those few of us who have the ability to
+                                            provide a helping hand come forward, we can certainly make a difference. We
+                                            strongly believe that we can make things a little easier for people since
+                                            life is unfair and treats some of its own kids in unreasonable ways.
+                                        </p>
+                                    </div>
+
+
+                                    <!-- <div id="page-3" class="page three">
                                 <h2 class="heading">Register</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur qui, alias, enim
                                     voluptas
@@ -203,7 +215,7 @@
 
 
 
-                            <!-- <div id="page-4" class="page four">
+                                    <!-- <div id="page-4" class="page four">
                                 <h2 class="heading">Support</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure repellendus nemo
                                     exercitationem maiores consectetur fugit eum a natus eos ullam. Molestias adipisci
